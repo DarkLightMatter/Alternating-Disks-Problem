@@ -2,4 +2,4 @@
 
 Group members:
 * Jonathan Gaytan jagaytan@csu.fullerton.edu
-* Kyle Dang "fill in"@csu.fullerton.edu
+* Kyle Dang dangkyle@csu.fullerton.edu
