@@ -1,0 +1,61 @@
+ALGORITHM 1
+
+//starts on leftmost disk to rightmost disk 
+for i = 0 to rightmost disk 
+
+  //when on rightmost disk
+  if disk_right is out of bounds 
+    break
+
+  //compare every two adjacent disk 
+  else if disk_left is white AND i <= 3
+
+    i++
+    do nothing
+
+  else if disk_left is black AND i > 3
+
+    i++
+    do nothing
+
+  //swap if necessary
+  else 
+    swap the disk_left with disk_right
+
+//start on rightmost disk to leftmost disk 
+for i at rightmost disk to 0
+
+  //when on rightmost disk
+  if disk_left is out of bounds
+
+    break
+
+  //compare every two adjacent disk 
+  else if disk_right is black AND i > 3
+    
+    i--
+    do nothing 
+
+  else if disk_right is white AND i <= 3
+
+    i--
+    do nothing
+
+  //swap if necessary 
+  else
+    swap the disk_right with disk_left 
+
+repeated n/2 times if n = 4 
+
+
+ALGORITHM 2 
+
+starts with leftmost disk and proceeds to rightmost disk 
+
+iterate over each pair ; moves 2 steps at a time 
+
+compares every 2 adjacent disks only if necessary 
+
+start at second leftmost disk and proceeds to second rightmost disk 
+
+alternate between run 1 and run 2 for total of n + 1 runs 
