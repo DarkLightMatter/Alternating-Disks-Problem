@@ -58,3 +58,57 @@ for n to n + 1
           position += 2  
   
   return sorted
+  
+# Lawnmower Psuedocode  
+
+  //BEFORE APPLICATION
+for n at 0 to n / 2
+  for position = 0 to rightmost_disk
+    
+    if disk[position] is out_of_bounds
+      break 
+
+    else if disk[position] is white AND position <= 3
+      do nothing 
+      position+=2 
+
+    else if disk[position] is black AND position > 3 
+      do nothing
+      position+=2 
+
+    else 
+      swap left_disk with right_disk
+      position+=2 
+
+  for position = rightmost_disk to 0 
+
+    if disk[position] is black AND position > 3 
+      do nothing
+      position-=2
+
+    if disk[position] is white AND position <= 3
+      do nothing
+      position-=2
+
+    else 
+      swap right_disk with left_disk 
+      position-=2
+
+//AFTER APPLICATION 
+for n to n / 2
+
+  for position at 0 to rightmost_disk - 1
+  
+    if value of left_disk > value of right_disk 
+      swap the disks 
+      add to numOfSwap
+      position++
+
+  for position at rightmost_disk - 2
+
+    if value of left_disk > value of right_disk 
+      swap the disks 
+      add to numOfSwap
+      position--
+
+  return sorted 
