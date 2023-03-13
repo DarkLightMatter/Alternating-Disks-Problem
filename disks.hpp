@@ -153,42 +153,66 @@ public:
 };
 
 // Algorithm that sorts disks using the alternate algorithm.
-sorted_disks sort_alternate(const disk_state& before) {
+sorted_disks sort_alternate(const disk_state& before) 
+{
   disk_state state = before;
 	int numOfSwap = 0;  
   int iterations = state.light_count() + 1;     
   
   for(int i = 0; i < iterations; i++)
   {
-    if((i%2 == 0))
+    if((i % 2) == 0)
     {
-      for(int j = 0; j < int(state.total_count()); i += 2)
+      for(int j = 0; j < int(state.total_count()); j += 2)
       {
-        state.swap(j);
-        ++numOfSwap;
+        if(state.get(j) > state.get(j + 1))
+        {
+          state.swap(j);
+          ++numOfSwap;
+        }
+      }
+    }
+    else
+    {
+      for(int j = 1; j < int(state.total_count()) - 1; j += 2)
+      {
+        if(state.get(j) > state.get(j + 1))
+        {
+          state.swap(j);
+          ++numOfSwap;
+        }
       }
     }
   }                                                               //record # of step swap
- 
 
   return sorted_disks(disk_state(state), numOfSwap);
 }
 
 
 // Algorithm that sorts disks using the lawnmower algorithm.
-sorted_disks sort_lawnmower(const disk_state& before) {
+sorted_disks sort_lawnmower(const disk_state& before) 
+{
   disk_state state = before;
   int numOfSwap = 0;
-  bool booleanFlag;
+  bool booleanFlag = true;
+
   for(int i = 0; i < state.light_count(); i++)
   {
-    if(i%2 == 0)
+    if((i % 2) == 0)
     {
       booleanFlag = true;
     }
     else
     {
       booleanFlag == false;
+    }
+    for(int j = booleanFlag ? 0 : state.total_count() - 2; j < state.total_count() - 1; booleanFlag ? ++j : --j)
+    {
+      if(state.get(j) > state.get(j + 1))
+      {
+        state.swap(j);
+        ++numOfSwap;
+      }
     }
   }
 
