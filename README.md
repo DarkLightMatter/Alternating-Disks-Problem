@@ -4,6 +4,11 @@ Group members:
 * Jonathan Gaytan jagaytan@csu.fullerton.edu
 * Kyle Dang dangkyle@csu.fullerton.edu
 
+# Alternate Algorithm 
+
+* input -> list of alternated colored disks, int n for amount of runs 
+* output -> list of organized disks 
+
 # Alternate Psuedocode
 
 //BEFORE APPLICATION 
@@ -58,7 +63,12 @@ for n to n + 1
           position += 2  
   
   return sorted
-  
+
+# Lawnmower Algorithm 
+
+* input -> list of alternate colored disks, int n for runs 
+* output -> organized list of disk
+
 # Lawnmower Psuedocode  
 
   //BEFORE APPLICATION
