@@ -67,7 +67,7 @@ for n to n + 1
 # Lawnmower Algorithm 
 
 * input -> list of alternate colored disks, int n for runs 
-* output -> organized list of disk
+* output -> organized list of disk, int number of swaps 
 
 # Lawnmower Psuedocode  
 
