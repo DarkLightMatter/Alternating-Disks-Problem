@@ -63,6 +63,7 @@ for n to n + 1
           position += 2  
   
   return sorted
+<<<<<<< HEAD
   
 # Alternate Step Count 
 
@@ -80,6 +81,8 @@ step count = 5 + (3n^2 + 17n + 14)/2
 step count = (3n^2 + 17n + 14 + 10)/2
 step count = (3n^2 + 17n + 24)/2
 step count = (3n^2 + 17n)/2 + 12  
+=======
+>>>>>>> 45be35cb3bf086b317bf65b193263e365b46fbba
 
 # Lawnmower Algorithm 
 

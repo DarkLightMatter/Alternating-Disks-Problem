@@ -60,6 +60,7 @@ public:
   }
 
   disk_color get(size_t index) const {
+    //std::cout << "get(): index = " << index << std::endl; 
     assert(is_index(index));
     return _colors[index];
   }
@@ -112,18 +113,21 @@ public:
   // Return true when this disk_state is fully sorted, with all light disks on
   // the left (low indices) and all dark disks on the right (high indices).
   bool is_sorted() const {
-      int halfCount = total_count() / 2;
-      for(int i = 0; i < int(total_count()); i++)
-      {
-        if(i < halfCount)
-        {
-          if(_colors[i] == DISK_DARK)
-          {
-            return false;
+      
+      int halfway_disk = total_count() / 2; 
+      int rightmost_disk = total_count();
+
+      for (int position = 0; position <= rightmost_disk; position++) {
+
+        if (position < halfway_disk) {
+          if (_colors[position] ==  DISK_DARK) {
+              return false;
+
           }
         }
       }
       return true;
+
   }
 };
 
@@ -152,69 +156,72 @@ public:
   }
 };
 
+// record # of step swap
 // Algorithm that sorts disks using the alternate algorithm.
-sorted_disks sort_alternate(const disk_state& before) 
-{
-  disk_state state = before;
-	int numOfSwap = 0;  
-  int iterations = state.light_count() + 1;     
+sorted_disks sort_alternate(const disk_state& before) {  
+
+  disk_state state = before; 
+  int numOfSwap = 0;  
+  int light_total = state.light_count() + 1;
+  int rightmost_disk = state.total_count();
+
   
-  for(int i = 0; i < iterations; i++)
-  {
-    if((i % 2) == 0)
-    {
-      for(int j = 0; j < int(state.total_count()); j += 2)
-      {
-        if(state.get(j) > state.get(j + 1))
-        {
-          state.swap(j);
-          ++numOfSwap;
+  for (int n = 0; n < light_total; n++) {
+
+    if (n % 2 == 0) {
+
+      for (int position = 0; position < rightmost_disk; position += 2) {
+
+        if (state.get(position) > state.get(position + 1)) {
+          state.swap(position);
+          numOfSwap++;
+
         }
       }
     }
-    else
-    {
-      for(int j = 1; j < int(state.total_count()) - 1; j += 2)
-      {
-        if(state.get(j) > state.get(j + 1))
-        {
-          state.swap(j);
-          ++numOfSwap;
+
+    else if (n % 2 == 1) {
+
+      for (int position = 1; position < rightmost_disk - 1; position += 2) {
+
+        if (state.get(position) > state.get (position + 1)) {
+          state.swap(position);
+          numOfSwap++; 
         }
-      }
-    }
-  }                                                               //record # of step swap
-
-  return sorted_disks(disk_state(state), numOfSwap);
-}
-
-
-// Algorithm that sorts disks using the lawnmower algorithm.
-sorted_disks sort_lawnmower(const disk_state& before) 
-{
-  disk_state state = before;
-  int numOfSwap = 0;
-  bool booleanFlag = true;
-
-  for(int i = 0; i < state.light_count(); i++)
-  {
-    if((i % 2) == 0)
-    {
-      booleanFlag = true;
-    }
-    else
-    {
-      booleanFlag == false;
-    }
-    for(int j = booleanFlag ? 0 : state.total_count() - 2; j < state.total_count() - 1; booleanFlag ? ++j : --j)
-    {
-      if(state.get(j) > state.get(j + 1))
-      {
-        state.swap(j);
-        ++numOfSwap;
       }
     }
   }
-
   return sorted_disks(disk_state(state), numOfSwap);
+
+}
+
+// Algorithm that sorts disks using the lawnmower algorithm.
+sorted_disks sort_lawnmower(const disk_state& before) {
+
+  int numOfSwap = 0; 
+  disk_state state = before; 
+	int light_total = state.light_count();
+  int rightmost_disk = state.total_count();
+
+  for (int n = 0; n < light_total; ++n) {
+
+    for (int position = 0; position < rightmost_disk - 1; ++position) {
+    
+      if (state.get(position) > state.get (position + 1)) {
+        state.swap(position);
+        numOfSwap++;
+      }
+    }
+
+    for (int position = rightmost_disk - 2; position > 0; --position) {
+
+      if (state.get(position) > state.get(position +1)) {
+        state.swap(position);
+        numOfSwap++;
+
+      }
+    }
+  }
+  return sorted_disks(disk_state(state), numOfSwap);
+
 }
