@@ -127,6 +127,7 @@ public:
         }
       }
       return true;
+
   }
 };
 
@@ -155,14 +156,17 @@ public:
   }
 };
 
+//record # of step swap
 // Algorithm that sorts disks using the alternate algorithm.
-sorted_disks sort_alternate(const disk_state& before) {                                                                    //record # of step swap
+sorted_disks sort_alternate(const disk_state& before) {  
+
   disk_state state = before; 
   int numOfSwap = 0;  
   int light_total = state.light_count() + 1;
   int rightmost_disk = state.total_count();
 
   for (int n = 0; n < light_total; n++) {
+
     if (n % 2 == 0) {
 
       for (int position = 0; position < rightmost_disk; position += 2) {
@@ -184,15 +188,15 @@ sorted_disks sort_alternate(const disk_state& before) {                         
           numOfSwap++; 
         }
       }
-
     }
   }
   return sorted_disks(disk_state(state), numOfSwap);
-}
 
+}
 
 // Algorithm that sorts disks using the lawnmower algorithm.
 sorted_disks sort_lawnmower(const disk_state& before) {
+
   int numOfSwap = 0; 
   disk_state state = before; 
 	int light_total = state.light_count();
@@ -216,8 +220,7 @@ sorted_disks sort_lawnmower(const disk_state& before) {
 
       }
     }
-
   }
-
   return sorted_disks(disk_state(state), numOfSwap);
+
 }
