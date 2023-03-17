@@ -117,3 +117,7 @@ $&emsp;&ensp;= 6n^2 + 3n + 1$
 ## Lawmower Algorithm Efficiency Class with Limit Theorem 
 
 $\lim_{n \rightarrow \infty} \frac{6n^2 + 3n + 1}{n^2} = 6$ <br /> 
+
+Due to $6 \geq 0$ and $6$ being a constant, the Limit Theorem states that $6n^2 + 3n + 1 \in O(n^2)$ <br />
+
+That means this algorithm has a time complexity of $O(n^2)$ <br />
