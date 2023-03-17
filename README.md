@@ -87,6 +87,7 @@ $\lim_{n \rightarrow \infty} \frac{\frac{3}{2}n^2 + \frac{17}{2}n + 12}{n^2} = \
 
 Due to $\frac{3}{2} \geq 0$ and $\frac{3}{2}$ being a constant, the Limit Theorem states that $\\frac{3n^2 + 17n}{2} + 12 \in O(n^2)$ <br />
 
+That means this algorithm has a time complexity of $O(n^2)$ <br />
 
 ## Lawnmower Algorithm 
 
