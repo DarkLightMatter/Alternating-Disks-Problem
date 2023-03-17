@@ -12,7 +12,9 @@ Group members:
 # Alternate Psuedocode
 
 //BEFORE APPLICATION 
+
 for n to n + 1
+
   for position = 0 to rightmost_disk //EVEN 
   
     if disk[2*position] is out_of_bounds
@@ -40,6 +42,7 @@ for n to n + 1
       do nothing 
 
 //AFTER APPLICATION 
+
 for n to n + 1
 
   check if even or odd 
@@ -68,31 +71,31 @@ for n to n + 1
 
 s.c. = 1 + 1 + 2 + 1 + (n - 0 + 1) * (2 + 2 + max(($n - 0 \over 2$ + 1) * (2 + 1), ($(n - 1) - 1 \over 2$ + 1) * (2 + 1)))
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * (4 + max(($n \over 2$ + 1) * 3, ($n - 2 \over 2$ + 1) * 3))
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max(($n \over 2$ + 1) * 3, ($n - 2 \over 2$ + 1) * 3))
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * (4 + max(($n + 2 \over 2$) * 3, ($n - 2 + 2 \over 2$) * 3))
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max(($n + 2 \over 2$) * 3, ($n - 2 + 2 \over 2$) * 3))
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * (4 + max($3n + 6 \over 2$, $n \over 2$ * 3))
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max($3n + 6 \over 2$, $n \over 2$ * 3))
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * (4 + max($3n + 6 \over 2$, $3n \over 2$))
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max($3n + 6 \over 2$, $3n \over 2$))
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * (4 + $3n + 6 \over 2$)
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + $3n + 6 \over 2$)
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * ($3n + 6 + 8 \over 2$)
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * ($3n + 6 + 8 \over 2$)
 
-&emsp;&ensp;&thinsp;= 5 + (n + 1) * ($3n + 14 \over 2$)
+&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * ($3n + 14 \over 2$)
 
-&emsp;&ensp;&thinsp;= 5 + ($3n^2 + 14n \over 2$ + $3n + 14 \over 2$)
+&emsp;&ensp;&thinsp;&thinsp;= 5 + ($3n^2 + 14n \over 2$ + $3n + 14 \over 2$)
 
-&emsp;&ensp;&thinsp;= 5 + $3n^2 + 14n + 3n + 14 \over 2$
+&emsp;&ensp;&thinsp;&thinsp;= 5 + $3n^2 + 14n + 3n + 14 \over 2$
 
-&emsp;&ensp;&thinsp;= 5 + $3n^2 + 17n + 14 \over 2$
+&emsp;&ensp;&thinsp;&thinsp;= 5 + $3n^2 + 17n + 14 \over 2$
 
-&emsp;&ensp;&thinsp;= $3n^2 + 17n + 14 + 10 \over 2$
+&emsp;&ensp;&thinsp;&thinsp;= $3n^2 + 17n + 14 + 10 \over 2$
 
-&emsp;&ensp;&thinsp;= $3n^2 + 17n + 24 \over 2$
+&emsp;&ensp;&thinsp;&thinsp;= $3n^2 + 17n + 24 \over 2$
 
-&emsp;&ensp;&thinsp;= $3n^2 + 17n \over 2$ + 12  
+&emsp;&ensp;&thinsp;&thinsp;= $3n^2 + 17n \over 2$ + 12  
 
 # Lawnmower Algorithm 
 
@@ -102,7 +105,9 @@ s.c. = 1 + 1 + 2 + 1 + (n - 0 + 1) * (2 + 2 + max(($n - 0 \over 2$ + 1) * (2 + 1
 # Lawnmower Psuedocode  
 
 //BEFORE APPLICATION
+
 for n at 0 to n / 2
+
   for position = 0 to rightmost_disk
     
     if disk[position] is out_of_bounds
@@ -135,6 +140,7 @@ for n at 0 to n / 2
       position-=2
 
 //AFTER APPLICATION 
+
 for n to n / 2
 
   for position at 0 to rightmost_disk - 1
