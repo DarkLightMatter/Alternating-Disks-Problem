@@ -67,18 +67,31 @@ for n to n + 1
 # Alternate Step Count 
 
 step count = 1 + 1 + 2 + 1 + (n - 0 + 1) * (2 + 2 + max(((n - 0)/2 + 1) * (2 + 1), (((n - 1) - 1)/2 + 1) * (2 + 1)))
+
 step count = 5 + (n + 1) * (4 + max((n/2 + 1) * 3, ((n - 2)/2 + 1) * 3))
+
 step count = 5 + (n + 1) * (4 + max(((n + 2)/2) * 3, ((n - 2 + 2)/2) * 3))
+
 step count = 5 + (n + 1) * (4 + max((3n + 6)/2, (n/2) * 3))
+
 step count = 5 + (n + 1) * (4 + max((3n + 6)/2, 3n/2))
+
 step count = 5 + (n + 1) * (4 + (3n + 6)/2)
+
 step count = 5 + (n + 1) * ((3n + 6 + 8)/2)
+
 step count = 5 + (n + 1) * ((3n + 14)/2)
-step count = 5 + ((3n^2 + 14n)/2 + (3n + 14)/2) 
+
+step count = 5 + ((3n^2 + 14n)/2 + (3n + 14)/2)
+
 step count = 5 + (3n^2 + 14n + 3n + 14)/2
+
 step count = 5 + (3n^2 + 17n + 14)/2
+
 step count = (3n^2 + 17n + 14 + 10)/2
+
 step count = (3n^2 + 17n + 24)/2
+
 step count = (3n^2 + 17n)/2 + 12  
 
 # Lawnmower Algorithm 
