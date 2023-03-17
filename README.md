@@ -93,7 +93,7 @@ That means this algorithm has a time complexity of $O(n^2)$ <br />
                 swap the disks 
                 add to numOfSwap
                 position--
-                
+
     return sorted 
     
 ## Lawnmower Step Count 
@@ -113,3 +113,7 @@ $&emsp;&ensp;= 4 + (n + 1) * (6n - 3)$
 $&emsp;&ensp;= 4 + (6n^2 - 3n + 6n - 3)$
 
 $&emsp;&ensp;= 6n^2 + 3n + 1$
+
+## Lawmower Algorithm Efficiency Class with Limit Theorem 
+
+$\lim_{n \rightarrow \infty} \frac{6n^2 + 3n + 1}{n^2} = 6$ <br /> 
