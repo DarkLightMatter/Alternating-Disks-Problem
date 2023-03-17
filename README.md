@@ -4,12 +4,12 @@ Group members:
 * Jonathan Gaytan jagaytan@csu.fullerton.edu
 * Kyle Dang dangkyle@csu.fullerton.edu
 
-# Alternate Algorithm 
+## Alternate Algorithm 
 
 * input -> list of alternated colored disks, int n for amount of runs 
 * output -> list of organized disks 
 
-# Alternate Psuedocode
+## Alternate Psuedocode
 
 //BEFORE APPLICATION 
 
@@ -51,7 +51,7 @@ Group members:
                     position += 2  
     return sorted
   
-# Alternate Step Count 
+## Alternate Step Count 
 
 $s.c. = 1 + 1 + 2 + 1 + (n - 0 + 1) * (2 + 2 + max((\frac{n - 0}{2} + 1) * (2 + 1), (\frac{(n - 1) - 1}{2} + 1) * (2 + 1)))$
 
@@ -81,12 +81,12 @@ $&emsp;&ensp;= \frac{3n^2 + 17n + 24}{2}$
 
 $&emsp;&ensp;= \frac{3n^2 + 17n}{2} + 12$
 
-# Lawnmower Algorithm 
+## Lawnmower Algorithm 
 
 * input -> list of alternate colored disks, int n for runs 
 * output -> organized list of disk, int number of swaps 
 
-# Lawnmower Psuedocode  
+## Lawnmower Psuedocode  
 
 //BEFORE APPLICATION
 
@@ -128,3 +128,21 @@ $&emsp;&ensp;= \frac{3n^2 + 17n}{2} + 12$
                 add to numOfSwap
                 position--
     return sorted 
+    
+## Lawnmower Step Count 
+
+$s.c. = 1 + 1 + 1 + 1 + (n - 0 + 1) * (((n - 1) - 0 + 1) * (2 + 1) + (\frac{0 - (n - 2)}{-1} + 1) * (2 + 1))$
+
+$&emsp;&ensp;= 4 + (n + 1) * (n * 3 + (\frac{-n + 2}{-1} + 1) * 3)$
+
+$&emsp;&ensp;= 4 + (n + 1) * (3n + (n - 2 + 1) * 3)$
+
+$&emsp;&ensp;= 4 + (n + 1) * (3n + (n - 1) * 3)$
+
+$&emsp;&ensp;= 4 + (n + 1) * (3n + (3n - 3))$
+
+$&emsp;&ensp;= 4 + (n + 1) * (6n - 3)$
+
+$&emsp;&ensp;= 4 + (6n^2 - 3n + 6n - 3)$
+
+$&emsp;&ensp;= 6n^2 + 3n + 1$
