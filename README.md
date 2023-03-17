@@ -68,34 +68,34 @@ for n to n + 1
   return sorted
   
 # Alternate Step Count 
-$\frac{n!}{k!(n-k)!}$
+
 $s.c. = 1 + 1 + 2 + 1 + (n - 0 + 1) * (2 + 2 + max((\frac{n - 0}{2} + 1) * (2 + 1), (\frac{(n - 1) - 1}{2} + 1) * (2 + 1)))$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (4 + max((\frac{n}{2} + 1) * 3, (\frac{n - 2}{2} + 1) * 3))$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max((\frac{n}{2} + 1) * 3, (\frac{n - 2}{2} + 1) * 3))$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (4 + max(($n + 2 \over 2$) * 3, (\frac{n - 2 + 2}{2}) * 3))$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max((\frac{n + 2}{2}) * 3, (\frac{n - 2 + 2}{2}) * 3))$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (4 + max(\frac{3n + 6}{2}, \frac{n}{2} * 3))$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max(\frac{3n + 6}{2}, \frac{n}{2} * 3))$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (4 + max(\frac{3n + 6}{2}, \frac{3n}{2}))$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + max(\frac{3n + 6}{2}, \frac{3n}{2}))$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (4 + \frac{3n + 6}{2})$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (4 + \frac{3n + 6}{2})$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (\frac{3n + 6 + 8}{2})$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (\frac{3n + 6 + 8}{2})$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (n + 1) * (\frac{3n + 14}{2})$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (n + 1) * (\frac{3n + 14}{2})$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + (\frac{3n^2 + 14n}{2} + \frac{3n + 14}{2})$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + (\frac{3n^2 + 14n}{2} + \frac{3n + 14}{2})$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + \frac{3n^2 + 14n + 3n + 14}{2}$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + \frac{3n^2 + 14n + 3n + 14}{2}$
 
-&emsp;&ensp;&thinsp;&thinsp;$= 5 + \frac{3n^2 + 17n + 14}{2}$
+$&emsp;&ensp;&thinsp;&thinsp;= 5 + \frac{3n^2 + 17n + 14}{2}$
 
-&emsp;&ensp;&thinsp;&thinsp;$= \frac{3n^2 + 17n + 14 + 10}{2}$
+$&emsp;&ensp;&thinsp;&thinsp;= \frac{3n^2 + 17n + 14 + 10}{2}$
 
-&emsp;&ensp;&thinsp;&thinsp;$= \frac{3n^2 + 17n + 24}{2}$
+$&emsp;&ensp;&thinsp;&thinsp;= \frac{3n^2 + 17n + 24}{2}$
 
-&emsp;&ensp;&thinsp;&thinsp;$= \frac{3n^2 + 17n}{2} + 12$
+$&emsp;&ensp;&thinsp;&thinsp;= \frac{3n^2 + 17n}{2} + 12$
 
 # Lawnmower Algorithm 
 
