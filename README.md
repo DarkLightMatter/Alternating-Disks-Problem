@@ -83,7 +83,9 @@ $&emsp;&ensp;= \frac{3n^2 + 17n}{2} + 12$
 
 ## Alternate Algorithm Efficiency Class with Limit Theorem 
 
-$\lim_{n \rightarrow \infty} \frac{\frac{3}{2}n^2 + \frac{17}{2}n + 12 = \frac{3}{2}$ <br /> 
+$\lim_{n \rightarrow \infty} \frac{\frac{3}{2}n^2 + \frac{17}{2}n} + 12 = \frac{3}{2}$ <br /> 
+
+
 
 ## Lawnmower Algorithm 
 
