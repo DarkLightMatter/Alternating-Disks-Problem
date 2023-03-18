@@ -11,40 +11,22 @@ Group members:
 
 ## Alternate Psuedocode
 
-//BEFORE APPLICATION 
-
     for n to n + 1
-        for position = 0 to rightmost_disk //EVEN 
-            if disk[2*position] is out_of_bounds
-                break 
-            else if disk[2*position - 1] is black 
-                i+=2
-                switch disk[2*position] with disk[2*position-1]
-            else 
-                i+=2
-                do nothing
-        for position = 1 to rightmost_disk-1 //ODD 
-            if disk[2*position + 1] is out_of_bounds
-                break 
-            else if disk[2*position - 2] is black 
-                i+=2
-                switch disk[2*position +1] with disk[2*position -2]
-            else 
-                i+=2 
-                do nothing 
 
-//AFTER APPLICATION 
-
-    for n to n + 1
         //check if even or odd 
         if even 
+
             for position at 0 to rightmost_disk
+
                 if value of left_disk > value of right_disk
                     swap position of disks
                     add to numOfSwap  
                     position += 2
+
         else odd
+
             for position at 1 to rightmost disk - 1
+
                 if value of left_disk > value of right_disk
                     swap position of disks 
                     add to numOfSwap
@@ -81,6 +63,14 @@ $&emsp;&ensp;= \frac{3n^2 + 17n + 24}{2}$
 
 $&emsp;&ensp;= \frac{3n^2 + 17n}{2} + 12$
 
+## Alternate Algorithm Efficiency Class with Limit Theorem 
+
+$\lim_{n \rightarrow \infty} \frac{\frac{3}{2}n^2 + \frac{17}{2}n + 12}{n^2} = \frac{3}{2}$ <br /> 
+
+Due to $\frac{3}{2} \geq 0$ and $\frac{3}{2}$ being a constant, the Limit Theorem states that $\\frac{3n^2 + 17n}{2} + 12 \in O(n^2)$ <br />
+
+That means this algorithm has a time complexity of $O(n^2)$ <br />
+
 ## Lawnmower Algorithm 
 
 * input -> list of alternate colored disks, int n for runs 
@@ -88,45 +78,22 @@ $&emsp;&ensp;= \frac{3n^2 + 17n}{2} + 12$
 
 ## Lawnmower Psuedocode  
 
-//BEFORE APPLICATION
-
-    for n at 0 to n / 2
-        for position = 0 to rightmost_disk
-            if disk[position] is out_of_bounds
-                break
-            else if disk[position] is white AND position <= 3
-                do nothing 
-                position+=2 
-            else if disk[position] is black AND position > 3 
-                do nothing
-                position+=2 
-            else 
-                swap left_disk with right_disk
-                position+=2 
-        for position = rightmost_disk to 0 
-            if disk[position] is black AND position > 3 
-                do nothing
-                position-=2
-            if disk[position] is white AND position <= 3
-                do nothing
-                position-=2
-            else 
-                swap right_disk with left_disk 
-                position-=2
-
-//AFTER APPLICATION 
-
     for n to n / 2
+
         for position at 0 to rightmost_disk - 1
+
             if value of left_disk > value of right_disk 
                 swap the disks 
                 add to numOfSwap
                 position++
+
         for position at rightmost_disk - 2
+
             if value of left_disk > value of right_disk 
                 swap the disks 
                 add to numOfSwap
                 position--
+
     return sorted 
     
 ## Lawnmower Step Count 
@@ -146,3 +113,11 @@ $&emsp;&ensp;= 4 + (n + 1) * (6n - 3)$
 $&emsp;&ensp;= 4 + (6n^2 - 3n + 6n - 3)$
 
 $&emsp;&ensp;= 6n^2 + 3n + 1$
+
+## Lawmower Algorithm Efficiency Class with Limit Theorem 
+
+$\lim_{n \rightarrow \infty} \frac{6n^2 + 3n + 1}{n^2} = 6$ <br /> 
+
+Due to $6 \geq 0$ and $6$ being a constant, the Limit Theorem states that $6n^2 + 3n + 1 \in O(n^2)$ <br />
+
+That means this algorithm has a time complexity of $O(n^2)$ <br />
