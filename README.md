@@ -1,4 +1,4 @@
-# project-lawnmover-Jonathan-Gaytan-and-Kyle-Dang
+# Alternating-Disks-Problem
 
 Group members:
 * Jonathan Gaytan jagaytan@csu.fullerton.edu
